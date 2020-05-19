@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main() {
-        int compras, atrasos, score;
+        int compras, atrasos, scores, Inadimplencia, sForma;
         char forma;
         double ticket;
         
@@ -32,4 +32,23 @@ int main() {
         }
         cout << endl;
         cout << "Score do volume de compras: " << score << endl;
+        if(atrasos > 1 || compras == 0) {
+                sInadimplencia = 0;
+        } 
+        else if(atrasos == 1) {
+                sInadimplencia = 15;
+        } 
+        else if(atrasos == 0 && compras > 0) {
+                sInadimplencia = 30;
+        }
+
+        if(forma == "D") { 
+                sForma = 5;
+        } 
+        else if (forma == "C" || forma == "B") {
+                sForma = 10;
+        }
+
+        cout << "Score de inadimplência: " << sInadimplencia << endl;
+        cout << "Score de forma de pagamento: " << sForma << endl;
 }
